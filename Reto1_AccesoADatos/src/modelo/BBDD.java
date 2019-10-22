@@ -28,7 +28,7 @@ public class BBDD {
 			}
 			// Si el controlador esta bien procedemos a conectarnos
 			 conexion = DriverManager
-					.getConnection("jdbc:mariadb://" + url + ":3306/" + bbdd + "?user=root&password=myPassword");
+					.getConnection("jdbc:mariadb://" + url + ":3306/" + bbdd + "?user=root");
 			
 			System.out.println("Conexión Exitosa");
 			
