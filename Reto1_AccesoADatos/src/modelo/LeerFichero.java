@@ -30,6 +30,7 @@ public class LeerFichero {
 			i.setLoc(delimitar.next());
 			listaDepartamentos.add(i);
 		} 	
+		//hola
 		scanner.close();
 		System.out.println(listaDepartamentos);
 		} catch (FileNotFoundException e) {
