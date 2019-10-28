@@ -5,15 +5,10 @@ public class Modelo {
 	private Fichero fichero;
 	private BBDD bbdd;
 	private ConsultasBase consultas;
-	//Recogeremos el valor desde el fichero
-	private String nombreBase;
-	
-	//recogeremos el valor desde el fichero
-	private String url;
-	
+
 	public Modelo() {
 		setFichero(new Fichero());
-		setBbdd(new BBDD(url,nombreBase ));
+		setBbdd(new BBDD( ));
 	}
 
 	public Fichero getFichero() {

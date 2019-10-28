@@ -3,75 +3,57 @@ package modelo;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Properties;
 
 public class BBDD {
-	private String url;
-	private String bbdd;
-	private static BBDD BaseSingleton;
-	private Connection conexion;
-	public static BBDD getConfigurador(String url, String bbdd) {
-		if (BaseSingleton == null) {
-			BaseSingleton = new BBDD(url, bbdd);
-		}
-		return BaseSingleton;
-	}
+    private static BBDD ourInstance = new BBDD();
 
-	// metodo conectarse a base
+    private static final String DATABASE_DRIVER = "org.mariadb.jdbc.Driver";
+    private static final String DATABASE_URL = "jdbc:mysql://127.0.0.1:3306/reto1";
+    private static final String USERNAME = "admin";
+    private static final String PASSWORD = "1234";
 
-	public Connection conectarBBDD(String url, String bbdd) {
-		try {
-			try {
-				// Comprobamos si el driver esta disponible
-				Class.forName("org.mariadb.jdbc.Driver");
-			} catch (ClassNotFoundException ex) {
-				System.out.println("Error al registrar el driver de mysql. Posibles causas: " + ex);
-			}
-			// Si el controlador esta bien procedemos a conectarnos
-			 conexion = DriverManager
-					.getConnection("jdbc:mariadb://" + url + ":3306/" + bbdd + "?user=root");
-			
-			System.out.println("Conexión Exitosa");
-			
-			return conexion;
-		} catch (java.sql.SQLException sqle) {
-			System.out.println("Conexion fallida: " + sqle);
-			
-			return null;
-		}
-	}
+    private Connection conectar;
+    private Properties propiedad;
 
-	// metodo para desconectarse de la base
-	public void desconectarBBDD() {
-		if (conexion != null) {
-		    try {
-		        conexion.close();
-		        conexion=null;
-		    } catch (SQLException e) {
-		    	e.printStackTrace();
-		    }
-		}
-	}
+    // Singleton
+    public static BBDD getInstance() {
+        return ourInstance;
+    }
 
-	BBDD(String url, String bbdd) {
-		this.url = url;
-		this.bbdd = bbdd;
-	}
+   
 
-	public String getUrl() {
-		return url;
-	}
+    private Properties getProperties() {
+        if(propiedad == null) {
+            propiedad = new Properties();
+            propiedad.setProperty("user", USERNAME);
+            propiedad.setProperty("password", PASSWORD);
+        }
+        return propiedad;
+    }
 
-	public void setUrl(String url) {
-		this.url = url;
-	}
+    public Connection conectar() {
+        if (conectar == null) {
+            try {
+                Class.forName(DATABASE_DRIVER);
+                conectar = DriverManager.getConnection(DATABASE_URL, getProperties());
+                System.out.println("Conexion exitosa");
+            } catch (ClassNotFoundException | SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return conectar;
+    }
 
-	public String getBaseDatos() {
-		return bbdd;
-	}
-
-	public void setBaseDatos(String bbdd) {
-		this.bbdd = bbdd;
-
-	}
-
+    public void desconectar() {
+        if(conectar != null) {
+            try {
+                conectar.close();
+                conectar = null;
+                System.out.println("Desconexion exitosa");
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
