@@ -57,6 +57,8 @@ public class Fichero {
 		    }
 		}
 	}
+	
+	
 	//FIXME EJEMPLO
 	public void escribirxml() {
 		try {
