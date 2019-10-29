@@ -7,11 +7,13 @@ public class Modelo {
 	private ConsultasBBDD consultas;
 	private Empleado empleado;
 	private Departamento departamento;
-	
+	private LeerFichero leerFichero;
 	public Modelo() {
 		setFichero(new Fichero());
 		setBbdd(new BBDD( ));
 		setEmpleado(new Empleado());
+    setLeerFichero(new LeerFichero());
+
 	}
 
 	public Fichero getFichero() {
@@ -37,6 +39,12 @@ public class Modelo {
 	public void setConsultas(ConsultasBBDD consultas) {
 		this.consultas = consultas;
 	}
+
+	public LeerFichero getLeerFichero() {
+		return leerFichero;
+	}
+	public void setLeerFichero(LeerFichero leerFichero) {
+		this.leerFichero = leerFichero;
 
 	public Empleado getEmpleado() {
 		return empleado;

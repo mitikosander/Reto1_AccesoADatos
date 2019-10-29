@@ -5,11 +5,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;		
 import java.util.Scanner;
+
+import javax.swing.text.Document;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 public class LeerFichero {
 	private static final ArrayList listaDepartamentos = null;
 	
 
-	public static ArrayList leerdepartamento() {
+	public ArrayList leerdepartamento() {
 		File archivo = null;
 		FileReader fr = null;
 		BufferedReader br = null;
@@ -43,6 +47,6 @@ public class LeerFichero {
 		return listaDepartamentos;
 	}
 	
-
+	
 	}
 
