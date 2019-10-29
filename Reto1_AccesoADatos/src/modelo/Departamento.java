@@ -1,16 +1,16 @@
 package modelo;
 
-public class departamento {
+public class Departamento {
 	private int codigo;
 	private String nombre;
 	private String loc;
 	
 	
-	departamento(){
+	Departamento(){
 		
 	}
 	
-	public departamento(int codigo, String nombre, String loc) {
+	public Departamento(int codigo, String nombre, String loc) {
 		
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -40,5 +40,4 @@ public class departamento {
 	public void setLoc(String loc) {
 		this.loc = loc;
 	}
-
 }

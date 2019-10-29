@@ -17,7 +17,7 @@ public class BBDD {
     private Properties propiedad;
 
     // Singleton
-    public static BBDD getInstance() {
+    public BBDD getInstance() {
         return ourInstance;
     }
 

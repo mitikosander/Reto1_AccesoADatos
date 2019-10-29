@@ -28,7 +28,7 @@ public class LeerFichero {
 			String linea = scanner.nextLine();
 			Scanner delimitar = new Scanner(linea);
 			delimitar.useDelimiter("\\s*,\\s*");
-			departamento i = new departamento();
+			Departamento i = new Departamento();
 			i.setCodigo(delimitar.nextInt());
 			i.setNombre(delimitar.next());
 			i.setLoc(delimitar.next());
