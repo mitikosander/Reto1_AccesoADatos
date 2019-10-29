@@ -4,11 +4,14 @@ public class Modelo {
 
 	private Fichero fichero;
 	private BBDD bbdd;
-	private ConsultasBase consultas;
-
+	private ConsultasBBDD consultas;
+	private Empleado empleado;
+	private Departamento departamento;
+	
 	public Modelo() {
 		setFichero(new Fichero());
 		setBbdd(new BBDD( ));
+		setEmpleado(new Empleado());
 	}
 
 	public Fichero getFichero() {
@@ -27,12 +30,28 @@ public class Modelo {
 		this.bbdd = bbdd;
 	}
 
-	public ConsultasBase getConsultas() {
+	public ConsultasBBDD getConsultas() {
 		return consultas;
 	}
 
-	public void setConsultas(ConsultasBase consultas) {
+	public void setConsultas(ConsultasBBDD consultas) {
 		this.consultas = consultas;
+	}
+
+	public Empleado getEmpleado() {
+		return empleado;
+	}
+
+	public void setEmpleado(Empleado empleado) {
+		this.empleado = empleado;
+	}
+
+	public Departamento getDepartamento() {
+		return departamento;
+	}
+
+	public void setDepartamento(Departamento departamento) {
+		this.departamento = departamento;
 	}
 	
 }
