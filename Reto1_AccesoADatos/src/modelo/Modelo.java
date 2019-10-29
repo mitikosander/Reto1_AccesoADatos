@@ -5,10 +5,11 @@ public class Modelo {
 	private Fichero fichero;
 	private BBDD bbdd;
 	private ConsultasBase consultas;
-
+	private LeerFichero leerFichero;
 	public Modelo() {
 		setFichero(new Fichero());
 		setBbdd(new BBDD( ));
+		setLeerFichero(new LeerFichero());
 	}
 
 	public Fichero getFichero() {
@@ -33,6 +34,14 @@ public class Modelo {
 
 	public void setConsultas(ConsultasBase consultas) {
 		this.consultas = consultas;
+	}
+
+	public LeerFichero getLeerFichero() {
+		return leerFichero;
+	}
+
+	public void setLeerFichero(LeerFichero leerFichero) {
+		this.leerFichero = leerFichero;
 	}
 	
 }

@@ -11,8 +11,10 @@ public class Main {
 		Modelo modelo = new Modelo();
 		Vista vista = new Vista();
 		Controlador controlador = new Controlador(vista, modelo);
-		
 		modelo.getBbdd().conectar();
+		//modelo.getFichero().leerxml();
+		//modelo.getFichero().escribirxml();
+		modelo.getLeerFichero().leerdepartamento();
 		modelo.getBbdd().desconectar();
 	}
 
