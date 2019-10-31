@@ -40,6 +40,7 @@ public class LeerFichero {
 
         	    bw.write(Integer.parseInt(x.setCodigo("3")),x.setLoc("Elorrieta"),x.setNombre("Informatica"));
            	//Error al intentar escribir en el txt 
+           	//2
 
  
 
