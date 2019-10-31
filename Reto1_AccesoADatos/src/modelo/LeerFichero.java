@@ -74,7 +74,7 @@ public class LeerFichero {
 
            	for (int i = 0; i < 10; i++)	
 
-        	    bw.write(Integer.parseInt(x.setCodigo("3")),x.setLoc("Elorrieta"),x.setNombre("Informatica"));
+        	    bw.write(Integer.parseInt(x.setCodigo("3")) + x.setLoc("Elorrieta") + x.setNombre("Informatica"));
            	//Error al intentar escribir en el txt 
            	//2
 
