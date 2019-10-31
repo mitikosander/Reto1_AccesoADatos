@@ -2,7 +2,6 @@ package modelo;
 
 import java.io.File;
 
-import javax.swing.text.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.transform.Transformer;
@@ -17,7 +16,7 @@ import org.w3c.dom.NodeList;
 
 
 public class Fichero {
-
+	private Metodos metodos= new Metodos();
 	private static Node doc;
 	Empleado datos = new Empleado();
 	public void leerxml() {
@@ -53,7 +52,8 @@ public class Fichero {
 			  
 			    datos.setApellido(eElement.getElementsByTagName("apellido").item(0).getTextContent());
 			    
-			    datos.setFecha_creacion(eElement.getElementsByTagName("fecha_creacion").item(0).getTextContent());
+			    String fecha= eElement.getElementsByTagName("fecha_creacion").item(0).getTextContent();
+			    datos.setFecha_creacion(metodos.ParseFecha(fecha));
 			    
 			    datos.setCod_dpto(Integer.parseInt(eElement.getElementsByTagName("cod_dpto").item(0).getTextContent()));
 			                

@@ -2,18 +2,54 @@ package modelo;
 import java.io.*;
 import java.util.ArrayList;		
 import java.util.Scanner;
-
-import javax.swing.text.Document;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 public class LeerFichero {
+<<<<<<< HEAD
 	public static void main(String[] args) {
+=======
+	private static final ArrayList<?> listaDepartamentos = null;
+	
+>>>>>>> branch 'Sander' of https://github.com/mitikosander/Reto1_AccesoADatos.git
 
+<<<<<<< HEAD
 		// TODO Auto-generated method stub
 
 		//escribirdepartamento();
 
 		//leerdepartamento();
+=======
+	public ArrayList<?> leerdepartamento() {
+		File archivo = null;
+		FileReader fr = null;
+		BufferedReader br = null;
+		try {
+		archivo = new File ("C:\\Users\\admin1\\Desktop\\reto1-AccesoDatos(David)\\departamento.txt");
+		ArrayList<Departamento> listaDepartamentos = new ArrayList<Departamento>();
+		fr = new FileReader (archivo);
+		br = new BufferedReader(fr);
+		Scanner scanner;
+		scanner=new Scanner(archivo);
+		while(scanner.hasNextLine()) {
+			String linea = scanner.nextLine();
+			Scanner delimitar = new Scanner(linea);
+			delimitar.useDelimiter("\\s*,\\s*");
+			Departamento i = new Departamento();
+			i.setCodigo(delimitar.nextInt());
+			i.setNombre(delimitar.next());
+			i.setLoc(delimitar.next());
+			listaDepartamentos.add(i);
+		} 	
+		//hola
+		scanner.close();
+		System.out.println(listaDepartamentos);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		return listaDepartamentos;
+>>>>>>> branch 'Sander' of https://github.com/mitikosander/Reto1_AccesoADatos.git
 	}
 
 
