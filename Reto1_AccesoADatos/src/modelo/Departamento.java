@@ -1,5 +1,11 @@
 package modelo;
 
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+
 public class Departamento {
 	private int codigo;
 	private String nombre;
@@ -9,6 +15,7 @@ public class Departamento {
 	Departamento(){
 		
 	}
+	
 	
 	public Departamento(int codigo, String nombre, String loc) {
 		
