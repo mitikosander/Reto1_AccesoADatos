@@ -52,8 +52,8 @@ public class Empleado {
 		return fecha_creacion;
 	}
 
-	public void setFecha_creacion(Date fecha_creacion) {
-		this.fecha_creacion = fecha_creacion;
+	public void setFecha_creacion(Date date) {
+		this.fecha_creacion = date;
 	}
 
 	public int getCod_dpto() {

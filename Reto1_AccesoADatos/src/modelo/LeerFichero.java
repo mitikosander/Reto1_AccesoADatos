@@ -5,21 +5,17 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;		
 import java.util.Scanner;
-
-import javax.swing.text.Document;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 public class LeerFichero {
-	private static final ArrayList listaDepartamentos = null;
+	private static final ArrayList<?> listaDepartamentos = null;
 	
 
-	public ArrayList leerdepartamento() {
+	public ArrayList<?> leerdepartamento() {
 		File archivo = null;
 		FileReader fr = null;
 		BufferedReader br = null;
 		try {
 		archivo = new File ("C:\\Users\\admin1\\Desktop\\reto1-AccesoDatos(David)\\departamento.txt");
-		ArrayList listaDepartamentos = new ArrayList();
+		ArrayList<Departamento> listaDepartamentos = new ArrayList<Departamento>();
 		fr = new FileReader (archivo);
 		br = new BufferedReader(fr);
 		Scanner scanner;

@@ -8,11 +8,14 @@ public class Modelo {
 	private Empleado empleado;
 	private Departamento departamento;
 	private LeerFichero leerFichero;
+	private Metodos metodos;
+	
 	public Modelo() {
 		setFichero(new Fichero());
 		setBbdd(new BBDD( ));
 		setEmpleado(new Empleado());
     setLeerFichero(new LeerFichero());
+    setMetodos(new Metodos());
 
 	}
 
@@ -45,7 +48,7 @@ public class Modelo {
 	}
 	public void setLeerFichero(LeerFichero leerFichero) {
 		this.leerFichero = leerFichero;
-
+	}
 	public Empleado getEmpleado() {
 		return empleado;
 	}
@@ -60,6 +63,14 @@ public class Modelo {
 
 	public void setDepartamento(Departamento departamento) {
 		this.departamento = departamento;
+	}
+
+	public Metodos getMetodos() {
+		return metodos;
+	}
+
+	public void setMetodos(Metodos metodos) {
+		this.metodos = metodos;
 	}
 	
 }
