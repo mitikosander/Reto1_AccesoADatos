@@ -46,9 +46,11 @@ public class Modelo {
 	public LeerFichero getLeerFichero() {
 		return leerFichero;
 	}
-	public void setLeerFichero(LeerFichero leerFichero) {
+	public  void setLeerFichero(LeerFichero leerFichero) {
 		this.leerFichero = leerFichero;
-	}
+
+		}
+
 	public Empleado getEmpleado() {
 		return empleado;
 	}
