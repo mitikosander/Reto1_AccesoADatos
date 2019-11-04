@@ -1,10 +1,6 @@
 package modelo;
 
-import java.io.EOFException;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
+
 
 public class Departamento {
 	private int codigo;
@@ -28,8 +24,8 @@ public class Departamento {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigo(int cod) {
+		this.codigo = cod;
 	}
 
 	public String getNombre() {
