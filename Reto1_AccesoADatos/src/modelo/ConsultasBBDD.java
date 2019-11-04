@@ -1,13 +1,15 @@
 package modelo;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class ConsultasBBDD {
 	// Escribir Empleado en BBDD (archivo xml)
+	
 	public void guadar_emp_BBDD(Empleado emp) throws SQLException {
-
+		Metodos metodos=new Metodos();
 		// Creamos la conexion a la base
 		BBDD bbdd = new BBDD();
 		Connection connection = bbdd.getInstance().conectar();
@@ -20,8 +22,9 @@ public class ConsultasBBDD {
 		ps.setString(2, emp.getNombre());
 
 		ps.setString(3, emp.getApellido());
-
-		ps.setDate(4, emp.getFecha_creacion());
+		
+		Date fecha= (Date) metodos.parseFecha(emp.getFecha_creacion());
+		ps.setDate(4, fecha);
 
 		ps.setInt(5, emp.getCod_dpto());
 
