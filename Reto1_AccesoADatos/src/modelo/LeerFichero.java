@@ -25,9 +25,12 @@ public class LeerFichero {
 
            	for (int i = 0; i < 10; i++)
            		
-        	    bw.write(x.getCodigo());
+        	    bw.write(Integer.toString(x.getCodigo()));
+           		
            		bw.write(x.getLoc());
+           		
            		bw.write( x.getNombre());
+           		
            	//Error al intentar escribir en el txt 
            	//2
            		bw.close();

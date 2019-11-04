@@ -1,8 +1,0 @@
-(1,'Informatica','Elorrieta'),
-(2,'Administracion','Errekamari'),
-(3,'Quimica','Errekamari'),
-(4,'Jardineria','Elorrieta'),
-(5,'Asir','Elorrieta'),
-(6,'Mecanica','Errekamari'),
-(7,'Electronica','Elorrieta'),
-(8,'Mecanica','Errekamari');

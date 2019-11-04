@@ -1,6 +1,8 @@
 package modelo;
 
 import java.io.File;
+import java.util.ArrayList;
+
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -19,9 +21,10 @@ public class Fichero {
 	private Metodos metodos= new Metodos();
 	private static Node doc;
 	Empleado datos = new Empleado();
-	public void leerxml() {
+	String fecha_form;
+	public ArrayList<Empleado> leerEmpleado() {
 		File file = new File("empleados.xml");
-		
+		ArrayList<Empleado> empleados=new ArrayList<Empleado>();
 		try {
 			  DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 			  DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -42,7 +45,7 @@ public class Fichero {
 
 		for(int temp = 0; temp < nList.getLength(); temp++) {
 			  Node nNode = nList.item(temp);
-
+			  
 			  if(nNode.getNodeType() == Node.ELEMENT_NODE) {
 			    Element eElement = (Element) nNode;
 
@@ -53,20 +56,22 @@ public class Fichero {
 			    datos.setApellido(eElement.getElementsByTagName("apellido").item(0).getTextContent());
 			    
 			    String fecha= eElement.getElementsByTagName("fecha_creacion").item(0).getTextContent();
-			    datos.setFecha_creacion(metodos.ParseFecha(fecha));
-			    
+			    datos.setFecha_creacion(fecha_form=metodos.formatFecha(fecha));
+			
 			    datos.setCod_dpto(Integer.parseInt(eElement.getElementsByTagName("cod_dpto").item(0).getTextContent()));
 			                
 			   datos.setCod_jefe(Integer.parseInt(eElement.getElementsByTagName("cod_jefe").item(0).getTextContent())) ;
+			   
+			   empleados.add(datos);
 			  }
 			}
 
-
+		return empleados;
 	}
 	
 	
 	//FIXME EJEMPLO
-	public void escribirxml() {
+	public void escribirEmpleado() {
 		try {
 			  DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			  DocumentBuilder db = dbf.newDocumentBuilder();

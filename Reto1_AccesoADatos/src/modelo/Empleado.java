@@ -1,12 +1,12 @@
 package modelo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Empleado {
 	private int codigo;
 	private String nombre;
 	private String apellido;
-	private Date fecha_creacion;
+	private String fecha_creacion;
 	private int cod_dpto;
 	private int cod_jefe;
 	
@@ -14,7 +14,7 @@ public class Empleado {
 		
 	}
 
-	public Empleado(int codigo, String nombre, String apellido, Date fecha_creacion, int cod_dpto, int cod_jefe) {
+	public Empleado(int codigo, String nombre, String apellido, String fecha_creacion, int cod_dpto, int cod_jefe) {
 		
 		this.codigo = codigo;
 		this.nombre = nombre;
@@ -48,11 +48,11 @@ public class Empleado {
 		this.apellido = apellido;
 	}
 
-	public Date getFecha_creacion() {
+	public String getFecha_creacion() {
 		return fecha_creacion;
 	}
 
-	public void setFecha_creacion(Date date) {
+	public void setFecha_creacion(String date) {
 		this.fecha_creacion = date;
 	}
 
