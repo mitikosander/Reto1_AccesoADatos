@@ -18,10 +18,11 @@ public class Main {
 
 		modelo.getFichero().escribirEmpleado();
 		ArrayList<Empleado> empleados = modelo.getFichero().leerEmpleado();
-
-		for (int i = 0; i < empleados.size() - 1; i++) {
+		Empleado a1;
+		for (int i = 0; i < empleados.size(); i++) {
 			try {
-				modelo.getConsultas().guadar_emp_BBDD(empleados.get(i));
+				a1=empleados.get(i);
+				modelo.getConsultas().guadar_emp_BBDD(a1);
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

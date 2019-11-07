@@ -18,10 +18,14 @@ import org.w3c.dom.NodeList;
 
 
 public class Fichero {
+	
+	
 	private Metodos metodos= new Metodos();
 	private static Node doc;
 	Empleado datos = new Empleado();
 	String fecha_form;
+	
+	
 	public ArrayList<Empleado> leerEmpleado() {
 		File file = new File("empleados.xml");
 		ArrayList<Empleado> empleados=new ArrayList<Empleado>();

@@ -1,5 +1,6 @@
 package modelo;
 
+
 import java.util.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,9 +9,9 @@ public class Metodos {
 	
 	public String formatFecha(String fecha){
         SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
-        Date fechaDate = null;
+        java.util.Date fechaDate = null;
         try {
-            fechaDate = (Date) formato.parse(fecha);
+            fechaDate =  formato.parse(fecha);
             fecha=formato.format(fechaDate);
         } 
         catch (ParseException ex) 
@@ -20,17 +21,18 @@ public class Metodos {
         return fecha;
     }
 	
-	public Date parseFecha(String fecha) {
+	public java.sql.Date parseFecha(String fecha) {
 		SimpleDateFormat formato=new SimpleDateFormat("dd/MM/yyyy");
 		Date fechaDate=null;
-		
+		java.sql.Date sql=null;
 		try {
 			fechaDate=formato.parse(fecha);
+			sql = new java.sql.Date(fechaDate.getTime());
 		}
 			catch(Exception e){
 			e.printStackTrace();	
 			}
-		return fechaDate;
+		return sql;
 		}
 
 }

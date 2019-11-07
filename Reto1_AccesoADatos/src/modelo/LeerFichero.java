@@ -1,5 +1,6 @@
 package modelo;
 import java.io.*;
+import java.util.ArrayList;
 
 
 public class LeerFichero {
@@ -65,9 +66,11 @@ public class LeerFichero {
 
  
 
-    public  void leerdepartamento()
-
-    {
+    public ArrayList<Departamento> leerdepartamento(){
+    	
+    	Departamento depart=new Departamento();
+    	ArrayList<Departamento> departamentos =new ArrayList<Departamento>();
+    	
 
         File archivo = null;
 
@@ -95,12 +98,14 @@ public class LeerFichero {
 
 			System.out.println("Leyendo el contendio del archivo.txt");
 
-			String linea;
+/*			String linea;
 
 			while((linea=br.readLine())!=null)
 
 				System.out.println(linea);
-
+*/
+			//Hay que hacer que el archivo guarde los datos en un objeto departamento no mostrar por consola
+			
         }
 
         catch(Exception e){
@@ -130,6 +135,8 @@ public class LeerFichero {
            }
 
         }
+        
+        return departamentos;
 
     }
 

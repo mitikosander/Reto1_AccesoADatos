@@ -15,7 +15,7 @@ public class ConsultasBBDD {
 		Connection connection = bbdd.getInstance().conectar();
 		// Preparamos una sentencia para hacer insert
 		PreparedStatement ps = connection.prepareStatement("Insert into empleado VALUES (?,?,?,?,?,?)");
-
+		
 		// Asignamos los atributos del objeto al insert
 		ps.setInt(1, emp.getCodigo());
 
@@ -24,12 +24,14 @@ public class ConsultasBBDD {
 		ps.setString(3, emp.getApellido());
 		
 		Date fecha= (Date) metodos.parseFecha(emp.getFecha_creacion());
-		ps.setDate(4, fecha);
+		ps.setDate(4, (java.sql.Date) fecha);
 
-		ps.setInt(5, emp.getCod_dpto());
+		ps.setInt(5,0); //Cogerlo del objeto  departamento
 
-		ps.setInt(6, emp.getCod_jefe());
+		ps.setInt(6, 0);
 
+		System.out.println("Insert into empleado VALUES ("+emp.getCodigo()+","+emp.getNombre()+","+emp.getApellido()+","+fecha+","+emp.getCod_dpto()+","+emp.getCod_jefe()+")");	
+		
 		// Ejecutamos la Query
 		ps.executeUpdate();
 
