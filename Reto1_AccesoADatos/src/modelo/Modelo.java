@@ -14,6 +14,7 @@ public class Modelo {
 		setFichero(new Fichero());
 		setBbdd(new BBDD( ));
 		setEmpleado(new Empleado());
+		setConsultas(new ConsultasBBDD());
     setLeerFichero(new LeerFichero());
     setMetodos(new Metodos());
 
